@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MZANCO</title>
+         <link rel="stylesheet" href="style.css">
+
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div style="text-align: center; background: red;">
+                <h1>MZANCO</h1>
+                
+             
+                <a href="index.html">Home</a>
+                <a href="upload.html">upload</a>
+                <a href="broadcast.html">broadcast</a>
+                <a href="about.htm">about</a>
+                </div>
+                <hr color="red" />
+            </nav>
+        </header>
+        <br />
+       
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Messaging Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #03112c;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .chat-header {
+      background-color: red;
+      color: white;
+      padding: 16px;
+      font-size: 1.25rem;
+    }
+
+    .chat-box {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 60%;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border-radius: 16px;
+    }
+
+    .message.user {
+      background-color: red;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .message.other {
+      background-color: #e5e7eb;
+      color: black;
+      align-self: flex-start;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #ccc;
+      background-color: white;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    .chat-input button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-header">
+    Send your anonymous message...
+  </div>
+
+  <div class="chat-box" id="chat-box">
+    <!-- Messages appear here -->
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="message-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('message-input');
+      const messageText = input.value.trim();
+      if (messageText === '') return;
+
+      const messageElem = document.createElement('div');
+      messageElem.className = 'message user';
+      messageElem.textContent = messageText;
+
+      document.getElementById('chat-box').appendChild(messageElem);
+      input.value = '';
+      input.focus();
+
+      // Optional: Auto scroll to the bottom
+      const chatBox = document.getElementById('chat-box');
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>
+
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Media</title>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .upload-icon {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      color: #2563eb;
+      font-size: 24px;
+      padding: 10px;
+    }
+
+    /* Hide default file input */
+    .upload-icon input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Icon to upload image/video -->
+  <label class="upload-icon" title="Send photo or video">
+    <i class="fas fa-paperclip"></i>
+    <input type="file" accept="image/*,video/*" onchange="handleFileUpload(event)">
+  </label>
+
+  <script>
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        alert(`Selected: ${file.name}`);
+        // Here you can handle the file (preview, send to server, etc.)
+      }
+    }
+  </script>
+
+</body>
+</html>
